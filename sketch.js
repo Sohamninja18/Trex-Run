@@ -130,10 +130,14 @@ spawnCactus();
   
   trex.changeAnimation("collided",trex_collided);
    trex.velocityY = 0;
-   
+   trex.pause();
   
    GO.visible = true;
    reset.visible= true;
+   fill("black");
+ textSize(20);
+   text("Score: "+score , 500, 50);
+
  }
  
 if(mousePressedOver(reset))
@@ -141,6 +145,7 @@ if(mousePressedOver(reset))
 gamestate = "play";
 reset.visible = false;
 GO.visible = false;
+  trex.play();
 
 cactusgrp.destroyEach();
 cloudgrp.destroyEach();
